@@ -1,14 +1,40 @@
 .container {
   margin: 75px;
   display: grid;
+  grid-gap: 30px;
   grid-template-rows: 100px 200px 400px 100px;
-  grid-auto-columns: repeat(3, 1fr) 200px;
+  grid-template-columns: repeat(3, 1fr) 200px;
+  /* Grid Template Area
   grid-template-areas: "header header header header"
                        "item item item side"
                        "main main main side"
                        "foot foot foot foot";
-  grid-gap: 30px;
+  */
 }
+
+
+/*
+
+Grid Gap Examples
+
+grid-gap: 30px;
+
+grid-column-gap: 20px; * Only column gap *
+
+grid-row-gap: 30px; * Only row gap *
+
+*/
+
+/*
+
+Declaring Row Rize Examples
+
+grid-template-rows: 100px 100px 100px 100px;
+grid-template-rows: repeat(4, 1fr);
+grid-template-rows: repeat(2, 200px) 400px 100px;
+
+*/
+
 
 .item {
   padding: 30px;
@@ -17,6 +43,26 @@
   font-size: 30px;
 }
 
+/* Using Row and Column numbers */
+.header {
+  grid-column: 1 / -1;
+}
+
+.side-nav {
+  grid-column: 4 / 5;
+  grid-row: 2 / span 2;
+}
+
+.content {
+  grid-column: 1 / span 3;
+}
+
+.footer {
+  grid-column: 1 / -1;
+}
+
+
+/* Using Template Area
 .header {
   grid-area: header;
 }
@@ -31,4 +77,4 @@
 
 .footer {
   grid-area: foot;
-}
+} */
